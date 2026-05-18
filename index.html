@@ -699,13 +699,12 @@
     }
 
     /* Fields */
-    #form-fields { display: flex; flex-direction: column; }
+    #form-fields { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
     .field { border-bottom: 1px solid var(--rule); transition: border-color 0.3s; }
-    .field:first-child { border-top: 1px solid var(--rule); }
     .field:focus-within { border-bottom-color: var(--ink); }
     .field-row { display: grid; grid-template-columns: 1fr 1fr; }
     .field-row .field { border-bottom: 1px solid var(--rule); }
-    .field-row .field:first-child { border-right: 1px solid var(--rule); border-top: 1px solid var(--rule); }
+    .field-row .field:first-child { border-right: 1px solid var(--rule); }
 
     .field-label {
       display: block;
@@ -761,6 +760,8 @@
     }
     .submit-btn:hover { background: #333; }
     .form-note { font-size: 11px; font-weight: 300; color: var(--ink); }
+    .form-pre-note { font-size: 11px; font-weight: 300; color: var(--mid); line-height: 1.7; margin-top: 2rem; margin-bottom: 0; }
+    .field-select:required:invalid { color: var(--muted); }
 
     .form-success { display: none; padding: 4rem 0; }
     .success-bar { width: 32px; height: 1px; background: var(--green); margin-bottom: 2rem; }
@@ -1199,49 +1200,124 @@
       <p class="section-label">Contato</p>
       <h2 class="section-heading">Vamos conversar<br>sobre seu projeto?</h2>
       <p class="contact-text">
-        Preencha o formulário e entraremos em contato em até 24h. A consulta inicial é gratuita e sem compromisso.
+        Compartilhe algumas informações iniciais sobre o imóvel. Nossa equipe entrará em contato para entender o momento do seu projeto e direcionar o atendimento de forma personalizada.
       </p>
     </div>
     <div class="reveal reveal-d1">
       <div id="form-fields">
+        <!-- 1 + 2: Nome e WhatsApp -->
         <div class="field-row">
           <div class="field">
-            <label class="field-label" for="nome">Nome</label>
-            <input class="field-input" type="text" id="nome" placeholder="Seu nome" autocomplete="name" />
+            <label class="field-label" for="nome">Nome completo</label>
+            <input class="field-input" type="text" id="nome" placeholder="Seu nome" autocomplete="name" required />
           </div>
           <div class="field">
             <label class="field-label" for="wpp">WhatsApp</label>
-            <input class="field-input" type="tel" id="wpp" placeholder="(00) 00000-0000" autocomplete="tel" />
+            <input class="field-input" type="tel" id="wpp" placeholder="(21) 99999-9999" autocomplete="tel" required />
           </div>
         </div>
+        <!-- 3: E-mail -->
         <div class="field">
           <label class="field-label" for="email">E-mail</label>
-          <input class="field-input" type="email" id="email" placeholder="seu@email.com" autocomplete="email" />
+          <input class="field-input" type="email" id="email" placeholder="seuemail@exemplo.com" autocomplete="email" required />
         </div>
+        <!-- 4: Região -->
         <div class="field">
-          <label class="field-label" for="tipo">Tipo de projeto</label>
-          <select class="field-select" id="tipo">
-            <option value="">Selecione...</option>
-            <option>Residencial — casa</option>
-            <option>Residencial — apartamento</option>
-            <option>Comercial</option>
-            <option>Reforma parcial</option>
-            <option>Outro</option>
+          <label class="field-label" for="regiao">Qual é a região do imóvel?</label>
+          <select class="field-select" id="regiao" required>
+            <option value="" disabled selected hidden>Selecione a região</option>
+            <option>Barra da Tijuca</option>
+            <option>Recreio dos Bandeirantes</option>
+            <option>Zona Sul</option>
+            <option>Zona Oeste</option>
+            <option>Grande Tijuca</option>
+            <option>Niterói</option>
+            <option>Outra região do Rio de Janeiro</option>
+            <option>Fora do Rio de Janeiro</option>
+            <option>Ainda estou definindo</option>
           </select>
         </div>
-        <div class="field">
-          <label class="field-label" for="msg">Mensagem (opcional)</label>
-          <textarea class="field-textarea" id="msg" rows="3" placeholder="Conte brevemente sobre o espaço..."></textarea>
+        <!-- 5 + 6: Tipo de imóvel e O que busca -->
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label" for="tipo_imovel">Tipo de imóvel</label>
+            <select class="field-select" id="tipo_imovel" required>
+              <option value="" disabled selected hidden>Selecione o tipo de imóvel</option>
+              <option>Apartamento</option>
+              <option>Casa</option>
+              <option>Cobertura</option>
+              <option>Casa em condomínio</option>
+              <option>Comercial / loja / showroom</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="servico">O que você está buscando?</label>
+            <select class="field-select" id="servico" required>
+              <option value="" disabled selected hidden>Selecione o tipo de atendimento</option>
+              <option>Projeto de interiores</option>
+              <option>Projeto arquitetônico</option>
+              <option>Projeto completo + acompanhamento de obra</option>
+              <option>Acompanhamento de obra</option>
+              <option>Reforma completa</option>
+              <option>Consultoria inicial</option>
+              <option>Ainda não sei exatamente</option>
+            </select>
+          </div>
         </div>
+        <!-- 7 + 8: Etapa e Prazo -->
+        <div class="field-row">
+          <div class="field">
+            <label class="field-label" for="etapa">Em que etapa você está?</label>
+            <select class="field-select" id="etapa" required>
+              <option value="" disabled selected hidden>Selecione a etapa atual</option>
+              <option>Já tenho o imóvel e quero iniciar o projeto</option>
+              <option>Estou comprando ou recebendo o imóvel</option>
+              <option>Já tenho projeto e preciso de acompanhamento</option>
+              <option>A obra já começou</option>
+              <option>Estou pesquisando possibilidades</option>
+              <option>Quero apenas entender valores</option>
+            </select>
+          </div>
+          <div class="field">
+            <label class="field-label" for="prazo">Quando pretende iniciar?</label>
+            <select class="field-select" id="prazo" required>
+              <option value="" disabled selected hidden>Selecione uma previsão</option>
+              <option>Imediatamente</option>
+              <option>Em até 30 dias</option>
+              <option>Em 1 a 3 meses</option>
+              <option>Em 3 a 6 meses</option>
+              <option>Ainda sem previsão</option>
+            </select>
+          </div>
+        </div>
+        <!-- 9: Investimento -->
+        <div class="field">
+          <label class="field-label" for="investimento">Faixa estimada de investimento</label>
+          <select class="field-select" id="investimento" required>
+            <option value="" disabled selected hidden>Selecione uma faixa aproximada</option>
+            <option>Até R$ 100 mil</option>
+            <option>De R$ 100 mil a R$ 300 mil</option>
+            <option>De R$ 300 mil a R$ 600 mil</option>
+            <option>Acima de R$ 600 mil</option>
+            <option>Ainda estou avaliando</option>
+            <option>Prefiro conversar sobre isso</option>
+          </select>
+        </div>
+        <!-- 10: Mensagem -->
+        <div class="field">
+          <label class="field-label" for="msg">Conte-nos um pouco sobre o projeto <span style="font-weight:300;opacity:.55;text-transform:none;letter-spacing:0;">(opcional)</span></label>
+          <textarea class="field-textarea" id="msg" rows="4" placeholder="Se desejar, compartilhe detalhes sobre o imóvel, objetivos, estilo desejado ou momento atual do projeto."></textarea>
+        </div>
+        <p class="form-pre-note">Essas informações nos ajudam a compreender melhor o perfil do projeto e preparar um primeiro contato mais assertivo.</p>
         <div class="form-footer">
-          <button class="submit-btn" onclick="enviar()">Enviar mensagem</button>
-          <span class="form-note">Dados confidenciais. Sem spam.</span>
+          <button class="submit-btn" id="submit-btn" onclick="enviar()">Enviar informações do projeto</button>
         </div>
       </div>
       <div class="form-success" id="form-ok">
         <div class="success-bar"></div>
-        <p class="success-title">Mensagem recebida.</p>
-        <p class="success-body">Obrigado pelo contato.<br>Entraremos em contato em até 24h<br>pelo WhatsApp informado.</p>
+        <p class="success-title">Informações recebidas.</p>
+        <p class="success-body">Obrigado pelo contato.<br>Nossa equipe analisará as informações e<br>entrará em contato pelo WhatsApp informado.</p>
       </div>
     </div>
   </div>
@@ -1439,21 +1515,69 @@
   }
 
   // Form
-  function enviar() {
-    var nome  = document.getElementById('nome').value.trim();
-    var wpp   = document.getElementById('wpp').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var tipo  = document.getElementById('tipo').value;
-    if (!nome)                          { alert('Informe seu nome.'); return; }
+  async function enviar() {
+    var nome         = document.getElementById('nome').value.trim();
+    var wpp          = document.getElementById('wpp').value.trim();
+    var email        = document.getElementById('email').value.trim();
+    var regiao       = document.getElementById('regiao').value;
+    var tipoImovel   = document.getElementById('tipo_imovel').value;
+    var servico      = document.getElementById('servico').value;
+    var etapa        = document.getElementById('etapa').value;
+    var prazo        = document.getElementById('prazo').value;
+    var investimento = document.getElementById('investimento').value;
+    var msg          = document.getElementById('msg').value.trim();
+
+    if (!nome)                          { alert('Informe seu nome completo.'); return; }
     if (!wpp)                           { alert('Informe seu WhatsApp.'); return; }
     if (!email || !email.includes('@')) { alert('Informe um e-mail válido.'); return; }
-    if (!tipo)                          { alert('Selecione o tipo de projeto.'); return; }
-    var msg = document.getElementById('msg').value.trim();
-    var texto = 'Olá! Vim pelo site da RBP.\n\nNome: ' + nome + '\nE-mail: ' + email + '\nTipo: ' + tipo
-      + (msg ? '\nMensagem: ' + msg : '');
-    window.open('https://wa.me/5521994828301?text=' + encodeURIComponent(texto), '_blank');
-    document.getElementById('form-fields').style.display = 'none';
-    document.getElementById('form-ok').style.display = 'block';
+    if (!regiao)                        { alert('Selecione a região do imóvel.'); return; }
+    if (!tipoImovel)                    { alert('Selecione o tipo de imóvel.'); return; }
+    if (!servico)                       { alert('Selecione o que você está buscando.'); return; }
+    if (!etapa)                         { alert('Selecione a etapa atual.'); return; }
+    if (!prazo)                         { alert('Selecione quando pretende iniciar.'); return; }
+    if (!investimento)                  { alert('Selecione a faixa estimada de investimento.'); return; }
+
+    var btn = document.getElementById('submit-btn');
+    btn.disabled = true;
+    btn.textContent = 'Enviando…';
+
+    var mensagem =
+      'Novo contato recebido pelo site da RBP\n\n' +
+      'Nome completo:\n' + nome + '\n\n' +
+      'WhatsApp:\n' + wpp + '\n\n' +
+      'E-mail:\n' + email + '\n\n' +
+      'Região do imóvel:\n' + regiao + '\n\n' +
+      'Tipo de imóvel:\n' + tipoImovel + '\n\n' +
+      'O que está buscando:\n' + servico + '\n\n' +
+      'Etapa atual:\n' + etapa + '\n\n' +
+      'Previsão para iniciar:\n' + prazo + '\n\n' +
+      'Faixa estimada de investimento:\n' + investimento + '\n\n' +
+      'Mensagem:\n' + (msg || '—');
+
+    try {
+      var res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: 'SEU_ACCESS_KEY_AQUI',
+          subject: 'Novo contato via site RBP — ' + nome,
+          from_name: 'Site RBP Arquitetura',
+          message: mensagem,
+          botcheck: ''
+        })
+      });
+      var data = await res.json();
+      if (data.success) {
+        document.getElementById('form-fields').style.display = 'none';
+        document.getElementById('form-ok').style.display = 'block';
+      } else {
+        throw new Error(data.message || 'Falha no envio');
+      }
+    } catch (e) {
+      btn.disabled = false;
+      btn.textContent = 'Enviar informações do projeto';
+      alert('Ocorreu um erro ao enviar. Por favor, entre em contato pelo WhatsApp.');
+    }
   }
 </script>
 </body>
