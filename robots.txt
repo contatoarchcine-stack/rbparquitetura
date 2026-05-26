@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://contatoarchcine-stack.github.io/rbparquitetura/sitemap.xml
