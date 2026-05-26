@@ -232,14 +232,14 @@
 
     .nav-logo { position: relative; display: flex; align-items: center; }
     .nav-logo img {
-      height: 64px;
+      height: 48px;
       width: auto;
       display: block;
       position: absolute;
       transition: opacity 0.5s;
     }
-    .nav-logo .logo-white { opacity: 1; }
-    .nav-logo .logo-dark { opacity: 0; }
+    .nav-logo .logo-white { opacity: 1; filter: brightness(0) invert(1); }
+    .nav-logo .logo-dark { opacity: 0; filter: none; }
     #nav.scrolled .nav-logo .logo-white { opacity: 0; }
     #nav.scrolled .nav-logo .logo-dark { opacity: 1; }
 
@@ -1005,8 +1005,8 @@
         left: auto;
         top: auto;
         transform: none;
-        width: 116px;
-        height: 50px;
+        width: 180px;
+        height: 40px;
         flex-shrink: 0;
       }
       .nav-logo img {
@@ -1015,7 +1015,7 @@
         right: 0;
         left: auto;
         transform: translateY(-50%);
-        height: 50px;
+        height: 40px;
         width: auto;
       }
       .nav-links { display: none; }
@@ -1051,8 +1051,8 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <img class="logo-white" src="img/logo-vertical-branco.png" alt="RBP Arquitetura" />
-    <img class="logo-dark" src="img/logo-vertical-preto.png" alt="RBP Arquitetura" />
+    <img class="logo-white" src="img/logo-horizontal-preto.png" alt="RBP Arquitetura e Interiores" />
+    <img class="logo-dark" src="img/logo-horizontal-preto.png" alt="RBP Arquitetura e Interiores" />
   </a>
   <div class="nav-links">
     <a href="#sobre" class="nav-link">Quem Somos</a>
