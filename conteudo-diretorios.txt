@@ -1,0 +1,77 @@
+========================================
+CONTEÚDO PARA CADASTRO EM DIRETÓRIOS
+RBP Arquitetura e Interiores
+========================================
+
+--- DADOS BÁSICOS (use exatamente iguais em todos os diretórios) ---
+
+Nome da empresa:
+RBP Arquitetura e Interiores
+
+Telefone:
+(21) 99482-8301
+
+E-mail:
+bianca@rbparquiteturaeinteriores.com.br
+
+Site:
+https://contatoarchcine-stack.github.io/rbparquitetura/
+
+Instagram:
+https://www.instagram.com/rbparquitetura/
+
+Cidade:
+Rio de Janeiro
+
+Estado:
+RJ
+
+País:
+Brasil
+
+Horário de funcionamento:
+Segunda a Sexta, das 9h às 18h
+
+Categorias / Tags:
+Arquitetura, Design de Interiores, Arquitetura Residencial, Reforma de Apartamento,
+Projeto de Interiores Rio de Janeiro, Arquitetura Barra da Tijuca,
+Design de Interiores Recreio, Projeto Residencial Zona Sul RJ
+
+
+--- DESCRIÇÃO CURTA (até 150 caracteres) ---
+
+Escritório de arquitetura e design de interiores de alto padrão no Rio de Janeiro. Regina e Bianca Prior — mais de 25 anos de experiência.
+
+
+--- DESCRIÇÃO MÉDIA (até 300 caracteres) ---
+
+A RBP Arquitetura e Interiores é um escritório carioca fundado por Regina e Bianca Prior. Com mais de 25 anos de experiência, desenvolvemos projetos residenciais e comerciais de alto padrão na Barra da Tijuca, Recreio, Zona Sul e Niterói.
+
+
+--- DESCRIÇÃO LONGA (para perfis completos) ---
+
+A RBP Arquitetura e Interiores é o encontro de duas gerações com o mesmo compromisso: transformar o modo como você vive dentro de casa.
+
+Regina Prior, arquiteta e urbanista, traz mais de 25 anos dedicados à arquitetura e à arte de compor ambientes — um repertório que só o tempo constrói. Bianca Prior, designer de interiores, une sensibilidade criativa e visão estratégica em cada projeto, atenta às novas formas de morar sem perder o respeito pelo que é atemporal.
+
+Juntas, desenvolvemos projetos residenciais e comerciais de alto padrão no Rio de Janeiro, com atuação na Barra da Tijuca, Recreio dos Bandeirantes, Zona Sul, Zona Oeste e Niterói. Nossos serviços incluem projeto arquitetônico, design de interiores, acompanhamento de obra e consultoria especializada.
+
+Antes do desenho, vem sempre uma escuta muito atenta. É essencial entender como o cliente vive para projetar cada cômodo com funcionalidade, estética e qualidade.
+
+
+--- SERVIÇOS (listar separadamente quando solicitado) ---
+
+1. Projeto Arquitetônico Residencial
+2. Design de Interiores
+3. Projeto Completo + Acompanhamento de Obra
+4. Projetos Comerciais
+5. Consultoria de Arquitetura e Interiores
+
+
+--- LINKS PARA CADASTRO ---
+
+Arcoweb:         https://www.arcoweb.com.br
+Viva Decora:     https://www.vivadecora.com.br
+Habitissimo:     https://www.habitissimo.com.br
+Apontador:       https://www.apontador.com.br
+Yelp Brasil:     https://www.yelp.com.br
